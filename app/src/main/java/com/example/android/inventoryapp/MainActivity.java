@@ -1,3 +1,17 @@
+/**
+ *
+ * Loading and retrieving images to/from database:
+ * http://www.tutorialforandroid.com/2009/10/how-to-insert-image-data-to-sqlite.html
+ * https://stackoverflow.com/questions/37779515/how-can-i-convert-an-imageview-to-byte-array-in-android-studio
+ *
+ * Loading picture for camera or gallery:
+ * https://developer.android.com/training/camera/photobasics.html
+ * http://programmerguru.com/android-tutorial/how-to-pick-image-from-gallery/
+ *
+ * Load image from gallery permissions:
+ * https://developer.android.com/training/permissions/requesting.html
+ */
+
 package com.example.android.inventoryapp;
 
 import android.app.LoaderManager;
