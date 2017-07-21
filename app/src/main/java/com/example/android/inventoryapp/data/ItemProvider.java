@@ -14,6 +14,8 @@ import android.util.Log;
 
 import com.example.android.inventoryapp.data.ItemContract.ItemEntry;
 
+import java.sql.Blob;
+
 /**
  * Created by irina on 20.07.2017.
  */
@@ -108,6 +110,7 @@ public class ItemProvider extends ContentProvider {
             throw new IllegalArgumentException("Item requires valid quantity");
         }
 
+
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         long id = db.insert(ItemEntry.TABLE_NAME, null, values);
@@ -152,6 +155,10 @@ public class ItemProvider extends ContentProvider {
         final int match = sUriMatcher.match(uri);
         switch (match){
             case ITEM:
+                return updateItem(uri, values, selection, selectionArgs);
+            case ITEM_ID:
+                selection = ItemEntry._ID + "=?";
+                selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
                 return updateItem(uri, values, selection, selectionArgs);
             default:
                 throw new IllegalArgumentException("Insertion not supported for URI " + uri);

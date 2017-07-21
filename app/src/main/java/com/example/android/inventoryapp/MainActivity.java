@@ -12,19 +12,17 @@ import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.example.android.inventoryapp.data.ItemContract.ItemEntry;
 
-import com.example.android.inventoryapp.data.ItemContract;
-
-import java.net.MalformedURLException;
-
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static int ITEM_LOADER = 0;
+    public static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     ItemCursorAdapter mCursorAdapter;
 
@@ -56,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 Intent intent = new Intent(MainActivity.this, DetailActivity.class);
 
                 Uri currentItemUri = ContentUris.withAppendedId(ItemEntry.CONTENT_URI, id);
+
+                Log.e(LOG_TAG, "Uri is " + currentItemUri);
                 intent.setData(currentItemUri);
                 startActivity(intent);
             }

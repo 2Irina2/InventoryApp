@@ -14,18 +14,30 @@
     <string name="minus">-</string>
 
     <string name="delete">Delete</string>
+    <string name="reset">Reset</string>
     <string name="call">Call supplier</string>
     <string name="order">Order</string>
 
     <string name="empty_text_view">Press the + button to add items</string>
 
+    <string name="detail_delete_item_failed">Error with deleting item</string>
+    <string name="detail_delete_item_successful">Item deleted successfully</string>
     <string name="detail_insert_item_failed">Error with saving item</string>
     <string name="detail_insert_item_successful">Item successfully saved</string>
+    <string name="detail_update_item_failed">Error with updating item</string>
+    <string name="detail_update_item_successful">Item successfully updated</string>
     <string name="inventory_minimum">There must be at least one item in the inventory</string>
 
     <string name="action_save">Save item</string>
     <string name="add_an_item">Add item</string>
     <string name="edit_item">Edit item</string>
+
+    <string name="delete_dialog_msg">Are you sure you want to delete this item?</string>
+    <string name="dialog_delete">Yes, delete</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="unsaved_changes_dialog_msg">There were changes made that will not be saved</string>
+    <string name="dialog_discard">Discard</string>
+    <string name="dialog_keep_editing">Keep editing</string>
 </resources>
 
 

@@ -1,5 +1,6 @@
 package com.example.android.inventoryapp.data;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -23,7 +24,8 @@ public class ItemDbHelper extends SQLiteOpenHelper {
                 + ItemEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + ItemEntry.COLUMN_ITEM_NAME + " TEXT NOT NULL, "
                 + ItemEntry.COLUMN_ITEM_PRICE + " INTEGER NOT NULL, "
-                + ItemEntry.COLUMN_ITEM_QUANTITY + " INTEGER NOT NULL DEFAULT 1);";
+                + ItemEntry.COLUMN_ITEM_QUANTITY + " INTEGER NOT NULL DEFAULT 1, "
+                + ItemEntry.COLUMN_ITEM_IMAGE + " BLOB);";
         db.execSQL(SQL_CREATE_ITEMS_TABLE);
     }
 

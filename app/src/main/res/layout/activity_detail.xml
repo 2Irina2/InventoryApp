@@ -6,18 +6,18 @@
     tools:context="com.example.android.inventoryapp.DetailActivity">
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/item_image"
         style="@style/image"
         android:layout_width="match_parent"
         android:layout_height="@dimen/image_height"
-        android:src="@drawable/placeholder" />
+        tools:src="@drawable/placeholder" />
 
     <TextView
         android:id="@+id/name_label"
         style="@style/labels"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/image"
+        android:layout_below="@id/item_image"
         android:text="@string/name_label" />
 
     <EditText
@@ -25,7 +25,7 @@
         style="@style/values"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/image"
+        android:layout_below="@id/item_image"
         android:hint="@string/name_placeholder" />
 
     <TextView
@@ -105,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/delete"
-            android:text="@string/delete" />
+            tools:text="@string/delete" />
     </LinearLayout>
 
 </RelativeLayout>
