@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Product name" />
+
+    <TextView
+        android:id="@+id/price"
+        style="@style/product_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/name"
+        android:layout_toEndOf="@id/name"
+        tools:text="$50" />
+
+    <TextView
+        android:id="@+id/quantity"
+        style="@style/product_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        tools:text="20" />
+
+    <Button
+        android:id="@+id/order"
+        style="@style/product_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/button_bottom"
+        android:text="@string/order" />
+</RelativeLayout>

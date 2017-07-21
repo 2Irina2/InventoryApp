@@ -1,0 +1,104 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Fab button styling -->
+    <style name="fab_button">
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_margin">@dimen/fab_margin</item>
+        <item name="android:src">@drawable/ic_add_white_24dp</item>
+    </style>
+
+    <!-- Image styling -->
+    <style name="image">
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <!-- Detail view labels -->
+    <style name="labels">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:layout_marginTop">@dimen/labels_top</item>
+        <item name="android:layout_marginBottom">@dimen/labels_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/labels_left</item>
+        <item name="android:textSize">@dimen/labels_text_size</item>
+    </style>
+
+    <!-- Detail view values -->
+    <style name="values">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginLeft">@dimen/values_left</item>
+        <item name="android:layout_marginTop">@dimen/values_top</item>
+        <item name="android:layout_marginRight">@dimen/values_right</item>
+    </style>
+
+    <!-- Detail view buttons -->
+    <style name="button">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- Detail view quantity -->
+    <style name="quantity_field">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:layout_marginLeft">@dimen/quantity_value_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/quantity_value_margin_right</item>
+        <item name="android:textSize">@dimen/quantity_text_size</item>
+    </style>
+
+    <!-- List view name -->
+    <style name="product_name">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:textSize">@dimen/labels_text_size</item>
+        <item name="android:layout_marginTop">@dimen/list_item_label_margin_top</item>
+        <item name="android:layout_marginLeft">@dimen/list_item_label_margin_left</item>
+    </style>
+
+    <!-- List view quantity -->
+    <style name="product_quantity">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:layout_marginLeft">@dimen/list_item_label_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/list_item_label_margin_right</item>
+        <item name="android:textSize">@dimen/list_item_quantity_text_size</item>
+    </style>
+
+    <!-- List view price -->
+    <style name="product_price">
+        <item name="android:textColor">@color/call</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/labels_text_size</item>
+        <item name="android:layout_marginTop">@dimen/list_item_label_margin_top</item>
+        <item name="android:layout_marginLeft">@dimen/list_item_label_margin_left</item>
+    </style>
+
+    <!-- List view button -->
+    <style name="product_button">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_marginTop">@dimen/list_item_label_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/quantity_value_margin_right</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <!-- Empty text view -->
+    <style name="empty_text_view">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5d4037</color>
+    <color name="colorPrimaryDark">#3e2723</color>
+    <color name="colorAccent">#8d6e63</color>
+    <color name="background">#efebe9</color>
+    <color name="delete">#d32f2f</color>
+    <color name="call">#388e3c</color>
+</resources>

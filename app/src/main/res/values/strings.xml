@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">InventoryApp</string>
+
+    <string name="name_label">Name</string>
+    <string name="name_placeholder">Insert name here</string>
+
+    <string name="quantity_label">Quantity</string>
+    <string name="quantity_placeholder">1</string>
+
+    <string name="price_label">Price($)</string>
+    <string name="price_placeholder">Insert price here</string>
+
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+
+    <string name="delete">Delete</string>
+    <string name="call">Call supplier</string>
+    <string name="order">Order</string>
+
+    <string name="empty_text_view">Press the + button to add items</string>
+
+    <string name="detail_insert_item_failed">Error with saving item</string>
+    <string name="detail_insert_item_successful">Item successfully saved</string>
+    <string name="inventory_minimum">There must be at least one item in the inventory</string>
+
+    <string name="action_save">Save item</string>
+    <string name="add_an_item">Add item</string>
+    <string name="edit_item">Edit item</string>
+</resources>
+
+

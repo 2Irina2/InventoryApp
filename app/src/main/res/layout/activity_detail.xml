@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.inventoryapp.DetailActivity">
+
+    <ImageView
+        android:id="@+id/image"
+        style="@style/image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_height"
+        android:src="@drawable/placeholder" />
+
+    <TextView
+        android:id="@+id/name_label"
+        style="@style/labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:text="@string/name_label" />
+
+    <EditText
+        android:id="@+id/name_field"
+        style="@style/values"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:hint="@string/name_placeholder" />
+
+    <TextView
+        android:id="@+id/price_label"
+        style="@style/labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name_label"
+        android:text="@string/price_label" />
+
+    <EditText
+        android:id="@+id/price_field"
+        style="@style/values"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name_field"
+        android:inputType="number"
+        android:hint="@string/price_placeholder" />
+
+    <TextView
+        android:id="@+id/quantity_label"
+        style="@style/labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/price_label"
+        android:text="@string/quantity_label" />
+
+    <LinearLayout
+        style="@style/values"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:layout_below="@id/price_field">
+
+        <Button
+            android:id="@+id/plus"
+            style="@style/button"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/plus" />
+
+        <TextView
+            android:id="@+id/quantity_field"
+            style="@style/quantity_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quantity_placeholder" />
+
+        <Button
+            android:id="@+id/minus"
+            style="@style/button"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/minus" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/call"
+            style="@style/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/call"
+            android:text="@string/call" />
+
+        <Button
+            android:id="@+id/delete"
+            style="@style/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/delete"
+            android:text="@string/delete" />
+    </LinearLayout>
+
+</RelativeLayout>
