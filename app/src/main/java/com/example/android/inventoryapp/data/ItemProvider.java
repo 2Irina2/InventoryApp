@@ -110,6 +110,11 @@ public class ItemProvider extends ContentProvider {
             throw new IllegalArgumentException("Item requires valid quantity");
         }
 
+        byte[] itemImage = values.getAsByteArray(ItemEntry.COLUMN_ITEM_IMAGE);
+        if(itemImage == null){
+            throw new IllegalArgumentException("Item requires valid quantity");
+        }
+
 
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 

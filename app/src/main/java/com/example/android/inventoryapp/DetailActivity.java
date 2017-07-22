@@ -14,6 +14,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
@@ -36,11 +37,12 @@ import com.example.android.inventoryapp.data.ItemContract.ItemEntry;
 
 import java.io.ByteArrayOutputStream;
 
+import static android.R.attr.bitmap;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class DetailActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
-    private final int IMAGE_LOADED = 0;
+    private int IMAGE_LOADED;
 
     private static final int EXISTING_ITEM_LOADER = 0;
 
@@ -99,11 +101,13 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
             setTitle(R.string.add_an_item);
             deleteButton.setText(R.string.reset);
             mImageView.setImageResource(R.drawable.placeholder);
+            IMAGE_LOADED = 0;
             actionDelete = false;
         } else {
             setTitle(R.string.edit_item);
             getLoaderManager().initLoader(EXISTING_ITEM_LOADER, null, this);
             deleteButton.setText(R.string.delete);
+            IMAGE_LOADED = 1;
             actionDelete = true;
         }
         mImageView.setOnClickListener(new View.OnClickListener() {
@@ -143,7 +147,7 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
             @Override
             public void onClick(View v) {
                 int quantity = Integer.valueOf(mQuantityTextView.getText().toString());
-                if (quantity == 1) {
+                if (quantity == 0) {
                     Toast.makeText(getApplicationContext(), R.string.inventory_minimum, Toast.LENGTH_SHORT).show();
                 } else {
                     quantity--;
@@ -167,6 +171,9 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
         String itemName = mNameEditText.getText().toString().trim();
         String itemPriceString = mPriceEditText.getText().toString().trim();
         String itemQuantityString = mQuantityTextView.getText().toString().trim();
+
+
+
         Bitmap bitmap = ((BitmapDrawable) mImageView.getDrawable()).getBitmap();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
@@ -177,6 +184,16 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
             itemPrice = 0;
         } else {
             itemPrice = Integer.parseInt(itemPriceString);
+        }
+
+        if(IMAGE_LOADED == 0){
+            Toast.makeText(getApplicationContext(), "Item must have valid image", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(itemQuantityString == "0"){
+            Toast.makeText(getApplicationContext(), R.string.inventory_minimum, Toast.LENGTH_LONG).show();
+            return;
         }
 
         int itemQuantity = Integer.parseInt(itemQuantityString);
@@ -384,6 +401,8 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
                 Bundle extras = data.getExtras();
                 Bitmap imageBitmap = (Bitmap) extras.get("data");
                 mImageView.setImageBitmap(imageBitmap);
+                IMAGE_LOADED = 1;
+
             } else if (requestCode == REQUEST_IMAGE_PICK) {
 
                 ActivityCompat.requestPermissions(this,
@@ -416,6 +435,7 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
 
 
                     mImageView.setImageBitmap(BitmapFactory.decodeFile(imgDecodableString));
+                    IMAGE_LOADED = 1;
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Permission denied. No photo loaded",
